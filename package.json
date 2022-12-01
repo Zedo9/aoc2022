@@ -1,0 +1,20 @@
+{
+  "name": "aoc2022",
+  "version": "1.0.0",
+  "description": "AoC 2022",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev:build": "tsc -w",
+		"dev:run": "nodemon .",
+    "test": "jest",
+		"dev": "concurrently npm:dev:*" 
+  },
+  "author": "Chedly Zouche",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "jest": "^29.3.1",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.3"
+  }
+}
