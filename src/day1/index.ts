@@ -1,13 +1,8 @@
-import { readLines } from "../utils";
-
-export function part1(): number {
-  const filePath = "inputs/day1/input.txt";
-  const lines = readLines(filePath);
-
+export function part1(input: string[]): number {
   let maxElfTotal = 0;
   let currentElfTotal = 0;
 
-  for (const line of lines) {
+  for (const line of input) {
     if (!line) {
       if (maxElfTotal < currentElfTotal) {
         maxElfTotal = currentElfTotal;
@@ -22,19 +17,16 @@ export function part1(): number {
   return maxElfTotal;
 }
 
-export function part2(): number {
-  const filePath = "inputs/day1/input.txt";
-  const lines = readLines(filePath);
-
+export function part2(input: string[]): number {
   const topElfTotals = [0, 0, 0];
   let currentElfTotal = 0;
 
-  for (const line of lines) {
+  for (const line of input) {
     if (!line) {
       for (let i = 0; i < 3; i++) {
         if (currentElfTotal > topElfTotals[i]) {
-          if (i !== 2) {
-            topElfTotals[i + 1] = topElfTotals[i];
+          for (let j = 2; j > i; j--) {
+            topElfTotals[j] = topElfTotals[j - 1];
           }
           topElfTotals[i] = currentElfTotal;
           break;
