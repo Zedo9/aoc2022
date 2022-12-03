@@ -1,4 +1,6 @@
-export function part1(input: string[]): number {
+export function part1(text: string): number {
+  const input = text.split("\n");
+
   let maxElfTotal = 0;
   let currentElfTotal = 0;
 
@@ -17,7 +19,9 @@ export function part1(input: string[]): number {
   return maxElfTotal;
 }
 
-export function part2(input: string[]): number {
+export function part2(text: string): number {
+  const input = text.split("\n");
+
   const topElfTotals = [0, 0, 0];
   let currentElfTotal = 0;
 

@@ -1,21 +1,21 @@
+import { readFileSync } from "fs";
 import { resolve } from "path";
 import { part1, part2 } from "../../src/day1";
-import { readLines } from "../utils/index";
 
 describe("Day 1", () => {
   const sampleFilePath = resolve(__dirname, "input/sample.txt");
-  const sampleLines = readLines(sampleFilePath);
+  const sampleText = readFileSync(sampleFilePath, "utf8");
 
   const inputFilePath = resolve(__dirname, "input/input.txt");
-  const inputLines = readLines(inputFilePath);
+  const inputText = readFileSync(inputFilePath, "utf8");
 
   test("Part 1", () => {
-    expect(part1(sampleLines)).toBe(24000);
-    expect(part1(inputLines)).toBe(69912);
+    expect(part1(sampleText)).toBe(24000);
+    expect(part1(inputText)).toBe(69912);
   });
 
   test("Part 2", () => {
-    expect(part2(sampleLines)).toBe(45000);
-    expect(part2(inputLines)).toBe(208180);
+    expect(part2(sampleText)).toBe(45000);
+    expect(part2(inputText)).toBe(208180);
   });
 });
